@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", require("./routes/root"));
 app.use("/tasks", require("./routes/api/tasks"));
 
+
 app.get("*", (req, res) => {
     res.status(404);
     if (req.accepts("html")) {
