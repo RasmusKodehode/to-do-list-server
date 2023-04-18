@@ -15,7 +15,13 @@ const readline = require("readline").createInterface({
   output: process.stdout,
 });
 
-tasksController.getAllTasks();
+router.route("/")
+  .get(tasksController.getAllTasks)
+  .post(tasksController.handleTask)
+  .put(tasksController.completedTask)
+  .delete(tasksController.deleteTask);
+
+tasksController.printAllTasks();
 console.log("Type a new task to create it");
 console.log("Type an existing task to complete it");
 console.log("type a completed task to delete it");
@@ -75,4 +81,4 @@ readline.question("Enter task:\n", async (data) => {
   }
 });
 
-module.exports = router;
+module.exports = router, {tasklist};

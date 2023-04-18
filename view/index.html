@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
     <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/formHandler.js" defer></script>
 </head>
 <body>
-    <h1>index main</h1>
+    <h1 id="headline"></h1>
+    <p>Head to the terminal to see and interact with the to-do list</p>
+    <p id="list-of-tasks">This site is under construction</p>
+    <form id="task-form">
+        <label for="input-task">Enter Task</label>
+        <input type="text" name="inputTask" id="input-task">
+        <button type="submit" id="submit-form">Submit</button>
+    </form>
+    <p id="response"></p>
 </body>
-</html>

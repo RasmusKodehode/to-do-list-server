@@ -1,4 +1,6 @@
 const path = require("path");
+const fs = require("fs");
+const fsPromises = require("fs").promises;
 const express = require("express");
 const { logger } = require("./middleware/logEvents");
 const cors = require("cors");
@@ -19,6 +21,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", require("./routes/root"));
 app.use("/tasks", require("./routes/api/tasks"));
+
 
 
 app.get("*", (req, res) => {
